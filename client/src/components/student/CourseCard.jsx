@@ -1,10 +1,13 @@
 import React from "react"
 
-const CourseCard = () => {
+const CourseCard = ({course}) => {
   return (
     <>
       <div>
-        <span className='text-red-500'>CourseCard</span>
+        <img src={course.courseThumbnail} alt="Course1" className="w-68" />
+        <div>
+          <h3>{course.courseTitle}</h3>
+        </div>
       </div>
     </>
   )
