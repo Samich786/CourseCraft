@@ -3,8 +3,7 @@ import Hero from "../../components/student/Hero"
 import SearchBar from "../../components/student/SearchBar"
 import Companies from "../../components/student/Companies"
 import CoursesSection from "../../components/student/CoursesSection"
-import CourseCard from "../../components/student/CourseCard"
-
+import TestimonialsSection from "../../components/student/TestimonialsSection"
 const Home = () => {
   return (
       <div className="flex flex-col items-center bg-gradient-to-b from-cyan-100/60 via-cyan-50/30 to-white space-y-7">
@@ -12,6 +11,7 @@ const Home = () => {
         <SearchBar />
         <Companies />
         <CoursesSection />
+        <TestimonialsSection />
       </div>
   )
 }

@@ -1,11 +1,12 @@
 import React from "react";
 import { assets } from "../../assets/assets";
-import { Link, navigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useClerk, UserButton, useUser } from "@clerk/clerk-react";
 const Navbar = () => {
   const isCourseListPage = location.pathname.includes("/course-list");
   const { user } = useUser();
   const { openSignIn } = useClerk();
+   const navigate = useNavigate();
   return (
     <>
       <div

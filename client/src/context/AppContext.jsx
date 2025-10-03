@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { dummyCourses } from "../assets/assets";
+import { dummyCourses, dummyTestimonial } from "../assets/assets";
 import { useState } from "react";
 import { useEffect } from "react";
 
@@ -8,9 +8,14 @@ export const AppContextProvider = (props)=>{
     const currency = import.meta.env.VITE_Currency || '$';
 
     const [allCourses, setAllCourses] = useState([])
+    const [ allTestimonials, setAllTestimonials] = useState([])
 
     useEffect(()=>{
         fetchAllCourses()
+    },[])
+
+    useEffect(()=>{
+        fetchAllTestimonials()
     },[])
 
     const fetchAllCourses = async()=>{
@@ -20,9 +25,18 @@ export const AppContextProvider = (props)=>{
             console.log(error)
         }
     }
+
+    const fetchAllTestimonials = async()=>{
+        try{
+            setAllTestimonials(dummyTestimonial)
+        }catch(error){
+            console.log(error)
+        }
+    }
     const value={
         currency,
-        allCourses
+        allCourses,
+        allTestimonials
     }
     return(
         <AppContext.Provider value={value}>
